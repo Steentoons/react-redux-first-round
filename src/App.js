@@ -1,13 +1,18 @@
 import "./css/color.css"
+import React from 'react';
+import Colorize from "./components/Colorize"
+import { Provider } from "react-redux"
+
+import {store} from "./actions"
 
 function App() {
+
   return (
-    <div className="App">
-      <h1>This color will be changed</h1>
-      <button id="red">RED</button>
-      <button id="blue">BLUE</button>
-      <button id="green">GREEN</button>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Colorize />
+      </div>
+    </Provider>
   ); 
 }
 
