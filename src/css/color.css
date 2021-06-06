@@ -1,0 +1,26 @@
+h1 {
+    box-sizing: border-box;
+    background: blue;
+    padding: 1em;
+    color: white;
+}
+
+button {
+    border-radius: 5px;
+    padding: .5em 1em;
+    border: none;
+    color: white;
+    margin-right: 1em;
+}
+
+#red {
+    background: red;
+}
+
+#blue {
+    background: blue;
+}
+
+#green {
+    background: green;
+}
