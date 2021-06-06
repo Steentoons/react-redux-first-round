@@ -1,31 +1,62 @@
 import { createStore } from "redux"
 
+export const colorObj = {
+    color: "blue"
+}
 
-  //Action
-  export const colorAction = () => {
+
+//Action
+export const colorRed = () => {
     return ({
-      type: "COLORIZE"
+        type: "RED"
     })
-  }
+}
+
+export const colorBlue = () => {
+    return ({
+        type: "BLUE"
+    })
+}
+
+export const colorGreen = () => {
+    return ({
+        type: "GREEN"
+    })
+}
 
 
-  //Reducer
-  export const colorReducer = (state = 0, colorAction) => {
-    switch(colorAction.type) {
-        case "COLORIZE":
-            return state + 1
+//Reducer
+export const colorReducer = (colorObj, action) => {
+    switch (action.type) {
+        case "RED":
+            return {
+                ...colorObj,
+                color: "red"
+            }
+
+        case "BLUE":
+            return {
+                ...colorObj,
+                color: "blue"
+            }
+
+        case "GREEN":
+            return {
+                ...colorObj,
+                color: "green"
+            }
+
         default:
-            return state   
+            return colorObj
 
     }
-  }
+}
 
-  export const store = createStore(
-      colorReducer, 
-      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-      )
+export const store = createStore(
+    colorReducer,
+    colorObj,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
-  //Dispatch
-  store.dispatch(colorAction())
-
-  
+//Dispatch
+// store.dispatch(colorAction())
